@@ -1,9 +1,10 @@
-import Emoji from "./Emoji"
+import Emoji from "./Emoji";
+import './App.css';
 
 function App() {
   return (
     <>
-    <Emoji/>
+      <Emoji/>
     </>
   );
 }

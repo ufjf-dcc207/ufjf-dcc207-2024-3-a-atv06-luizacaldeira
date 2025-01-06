@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./Emoji.css";
+import './Emoji.css';
 
 const EMOJIS = new Map<string,string>(
     [
