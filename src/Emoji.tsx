@@ -12,5 +12,5 @@ const EMOJIS = new Map<string,string>(
 
 export default function Emoji(){
     let situacao = "dead";
-    return <div className="emoji">{EMOJIS.get(situacao)}</div>
+return <div className="emoji">{EMOJIS.get(situacao) || "☠️"}</div>
 }
