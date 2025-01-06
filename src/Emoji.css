@@ -1,9 +1,10 @@
 .emoji{
     .face{ 
-        font-size:4em;
+        font-size:10em;
     }
     .acoes {
         display: flex;
         flex-direction: column;
+        gap: 5px;
     }
 }
