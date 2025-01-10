@@ -2,9 +2,13 @@
 
 import { useState } from "react";
 
+type AtributoProps = {
+    icone: string;
+}
+
 export default function Atributo(){
 
-    const [valor, setValor] = useState (0);
+    const [valor, setValor] = useState (3);
 
     function onMaisClick(){
         if(valor === 5){
@@ -17,7 +21,8 @@ export default function Atributo(){
 
     return(
         <div className="atributo">
-            <span>{valor}</span>
+            <span>{"X".repeat(valor)}</span>
+            <span>{"_".repeat(5 - valor)}</span>
             <button onClick={onMaisClick}>+</button>
         </div>
 
