@@ -15,34 +15,40 @@ const EMOJIS = new Map<string,string>(
 export default function Emoji(){
     const [situacao, setSituacao] = useState("dead");
 
-    function toHappy(){
+    function onAlimentar(){
         console.log(`to Happy!"${situacao}`);
         setSituacao("happy");
         console.log(`to Happy!"${situacao}`);
     }
 
-    function toDead(){
+    function onHidratar(){
         console.log(`to Dead!${situacao}`);
         setSituacao("dead");
     }
-    function toSick(){
+    function onLigaDesligaLuz(){
         console.log(`to Sick!${situacao}`);
         setSituacao("sick");
     }
+    function onCiclo(){
+        console.log(`to Sick!${situacao}`);
+        setSituacao("sick");
+    }
+    
 
     return (
         <div className="emoji">
             <div className="face">{EMOJIS.get(situacao) || "☠️"}</div>
             <div className="acoes">
-                <button onClick={toHappy}>Vivo</button>
-                <button onClick={toDead}>Morto</button>
-                <button onClick={toSick}>Doente</button>
+                <button onClick={onAlimentar}>Dar Comida</button>
+                <button onClick={onHidratar}>Dar água</button>
+                <button onClick={onLigaDesligaLuz}>Liga/Desligar a luz</button>
+                <button onClick={onCiclo}>Ciclo</button>
             </div>
             <div className="atributos">
-                <Atributo icone = "❤️"></Atributo>
-                <Atributo icone = "⚡"></Atributo>
-                <Atributo icone = "🍗"></Atributo>
-                <Atributo icone = "💧"></Atributo>
+                <Atributo icone = "❤️" valor={3}></Atributo>
+                <Atributo icone = "⚡" valor={3}></Atributo>
+                <Atributo icone = "🍗" valor={3}></Atributo>
+                <Atributo icone = "💧" valor={3}></Atributo>
             </div>
         </div>
     );
