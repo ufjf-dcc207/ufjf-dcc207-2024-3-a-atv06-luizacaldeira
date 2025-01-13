@@ -14,24 +14,21 @@ const EMOJIS = new Map<string,string>(
 
 export default function Emoji(){
     const [situacao, setSituacao] = useState("dead");
+    const [saude, setSaude] = useState(4);
+    const [energia, setEnergia] = useState(3);
+    const [agua, setAgua] = useState(2);
+    const [comida, setComida] = useState(1);
 
     function onAlimentar(){
-        console.log(`to Happy!"${situacao}`);
-        setSituacao("happy");
-        console.log(`to Happy!"${situacao}`);
+        setComida(comida === 5 ? comida : comida + 1);
     }
 
     function onHidratar(){
-        console.log(`to Dead!${situacao}`);
-        setSituacao("dead");
+        setAgua( agua === 5 ? agua : agua + 1);
     }
     function onLigaDesligaLuz(){
-        console.log(`to Sick!${situacao}`);
-        setSituacao("sick");
     }
     function onCiclo(){
-        console.log(`to Sick!${situacao}`);
-        setSituacao("sick");
     }
     
 
@@ -45,10 +42,10 @@ export default function Emoji(){
                 <button onClick={onCiclo}>Ciclo</button>
             </div>
             <div className="atributos">
-                <Atributo icone = "❤️" valor={3}></Atributo>
-                <Atributo icone = "⚡" valor={3}></Atributo>
-                <Atributo icone = "🍗" valor={3}></Atributo>
-                <Atributo icone = "💧" valor={3}></Atributo>
+                <Atributo icone = "❤️" valor={saude}></Atributo>
+                <Atributo icone = "⚡" valor={energia}></Atributo>
+                <Atributo icone = "🍗" valor={comida}></Atributo>
+                <Atributo icone = "💧" valor={agua}></Atributo>
             </div>
         </div>
     );
